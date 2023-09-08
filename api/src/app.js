@@ -3,6 +3,7 @@ const  morgan = require('morgan');
 const server = express();
 const routes = require('./routes/index')
 
+require=('./db')
 
 server.use(express.json());
 server.use(morgan('dev'));

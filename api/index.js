@@ -1,5 +1,8 @@
-const server = require('./src/app');
+const server = require("./src/app");
+const { conn } = require("./src/db");
 
-server.listen(3001, () => {
-  console.log('Server running on port 3001');
+conn.sync({ force: true }).then(() => {
+  server.listen(3001, () => {
+    console.log("Server running on port 3001");
+  });
 });
